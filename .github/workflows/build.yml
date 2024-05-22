@@ -23,3 +23,17 @@ jobs:
 
       - name: Run Node.js script
         run: node index.js
+
+      - name: Configure Git
+        run: |
+          git config --global user.email 'action@github.com'
+          git config --global user.name 'GitHub Action'
+
+      - name: Push changes if tests pass
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          git add .
+          git commit -m "Auto-push: Tests passed"
+          git push origin main
