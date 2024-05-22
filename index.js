@@ -16,6 +16,8 @@ function runTests() {
 
   testCases.forEach((testCase, index) => {
     console.log(`Running Test Case ${index + 1}`);
+    console.log(`Input: ${testCase.input}`);
+    console.log(`Expected Output: ${testCase.expectedOutput}`);
 
     // Run Python script with input
     const pythonProcess = execSync(`echo "${testCase.input}" | python sum.py`);
