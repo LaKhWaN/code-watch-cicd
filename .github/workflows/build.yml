@@ -26,11 +26,13 @@ jobs:
 
       - name: Push changes if tests pass
         if: success()
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
           git config --global user.email 'action@github.com'
           git config --global user.name 'GitHub Action'
+          BRANCH_NAME="test-results-$(date +%Y%m%d%H%M%S)"
+          git checkout -b $BRANCH_NAME
           git add sum.py
           git commit -m "Auto-push: Tests passed"
-          git push origin main
-        env:
-          PAT: ${{secrets.PAT}}
+          git push origin $BRANCH_NAME
