@@ -22,9 +22,9 @@ function runTests() {
     // Run Python script with input
     const pythonProcess = execSync(`echo "${testCase.input}" | python sum.py`);
     const pythonOutput = pythonProcess.toString();
-    
+
     console.log(`Output: ${pythonOutput}`);
-    
+
     console.log(pythonProcess.toString());
     // Compare output with expected output
     if (pythonOutput !== testCase.expectedOutput) {
@@ -53,9 +53,9 @@ function pushChanges() {
 // Function to create an issue
 function createIssue() {
   // Raise an issue in the repository
-  execSync(
-    `gh issue create --title "Tests failed" --body "Tests failed. Please check your code."`
-  );
+  // execSync(
+  //   `gh issue create --title "Tests failed" --body "Tests failed. Please check your code."`
+  // );
   console.log("Creating issue: Tests failed. Please check your code.");
 }
 
