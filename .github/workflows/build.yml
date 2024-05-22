@@ -32,7 +32,7 @@ jobs:
       - name: Push changes if tests pass
         if: success()
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          code-watch: ${{ secrets.TOKEN }}
         run: |
           git add .
           git commit -m "Auto-push: Tests passed"
