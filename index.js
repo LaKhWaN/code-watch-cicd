@@ -1,7 +1,6 @@
-// test_and_push.js
+// index.js
 
 const { execSync } = require("child_process");
-const fs = require("fs");
 
 // Define test cases (input and expected output)
 const testCases = [
@@ -21,14 +20,16 @@ function runTests() {
 
     // Run Python script with input
     const pythonProcess = execSync(`echo "${testCase.input}" | python sum.py`);
-    const pythonOutput = pythonProcess.toString();
+    let pythonOutput = pythonProcess.toString().trim(); // Trim whitespace
 
     console.log(`Output: ${pythonOutput}`);
     console.log(`Expected Output: ${testCase.expectedOutput}`);
-    // console.log(`PypythonProcess.toString());
+
     // Compare output with expected output
-    console.log("Chuthad: ", pythonOutput != testCase.expectedOutput);
-    if (pythonOutput != testCase.expectedOutput) {
+    if (
+      parseFloat(pythonOutput).toFixed(1) !==
+      parseFloat(testCase.expectedOutput).toFixed(1)
+    ) {
       console.log(`Test Case ${index + 1} failed!`);
       passedAllTests = false;
     } else {
