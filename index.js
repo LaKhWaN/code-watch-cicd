@@ -24,7 +24,7 @@ function runTests() {
     const pythonOutput = pythonProcess.toString();
 
     console.log(`Output: ${pythonOutput}`);
-
+    console.log(`Expected Output: ${testCase.expectedOutput}`);
     // console.log(`PypythonProcess.toString());
     // Compare output with expected output
     console.log("Chuthad: ", pythonOutput != testCase.expectedOutput);
