@@ -27,6 +27,7 @@ function runTests() {
 
     // console.log(`PypythonProcess.toString());
     // Compare output with expected output
+    console.log("Chuthad: ", pythonOutput != testCase.expectedOutput);
     if (pythonOutput != testCase.expectedOutput) {
       console.log(`Test Case ${index + 1} failed!`);
       passedAllTests = false;
