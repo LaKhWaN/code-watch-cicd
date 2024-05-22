@@ -30,7 +30,7 @@ function runTests() {
       parseFloat(pythonOutput).toFixed(1) !==
       parseFloat(testCase.expectedOutput).toFixed(1)
     ) {
-      console.log(`1Test Case ${index + 1} failed!`);
+      console.log(`Test Case ${index + 1} failed!`);
       passedAllTests = false;
     } else {
       console.log(`Test Case ${index + 1} passed!`);
