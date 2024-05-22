@@ -5,9 +5,9 @@ const fs = require("fs");
 
 // Define test cases (input and expected output)
 const testCases = [
-  { input: "1 2", expectedOutput: "3\n" },
-  { input: "-1 5", expectedOutput: "4\n" },
-  { input: "3.5 2.5", expectedOutput: "6\n" },
+  { input: "1 2", expectedOutput: "3.0" },
+  { input: "-1 5", expectedOutput: "4.0" },
+  { input: "3.5 2.5", expectedOutput: "6.0" },
 ];
 
 // Function to run tests
@@ -25,7 +25,7 @@ function runTests() {
 
     console.log(`Output: ${pythonOutput}`);
 
-    console.log(pythonProcess.toString());
+    // console.log(`PypythonProcess.toString());
     // Compare output with expected output
     if (pythonOutput != testCase.expectedOutput) {
       console.log(`Test Case ${index + 1} failed!`);
