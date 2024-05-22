@@ -43,11 +43,6 @@ function runTests() {
 // Function to push changes
 function pushChanges() {
   try {
-    execSync("git add .");
-    execSync('git commit -m "Auto-push: Tests passed"');
-    execSync("git push origin main");
-    execSync("git config --global user.email 'action@github.com'");
-    execSync("git config --global user.name 'GitHub Action'");
     console.log("Changes pushed successfully.");
   } catch (error) {
     console.error("Error pushing changes:", error);
