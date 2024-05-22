@@ -22,7 +22,10 @@ function runTests() {
     // Run Python script with input
     const pythonProcess = execSync(`echo "${testCase.input}" | python sum.py`);
     const pythonOutput = pythonProcess.toString();
-
+    
+    console.log(`Output: ${pythonOutput}`);
+    
+    console.log(pythonProcess.toString());
     // Compare output with expected output
     if (pythonOutput !== testCase.expectedOutput) {
       console.log(`Test Case ${index + 1} failed!`);
