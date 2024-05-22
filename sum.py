@@ -3,7 +3,7 @@
 import sys
 
 def sum_two_numbers(num1, num2):
-    return num1 + num2
+    return num1 + num2 + 2
 
 if __name__ == "__main__":
     # Read input
