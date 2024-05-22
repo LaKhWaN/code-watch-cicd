@@ -32,6 +32,5 @@ jobs:
           git add .
           git commit -m "Auto-push: Tests passed"
           git push origin main
-
         env:
-          PAT: ${{secrets.PAT }}
+          PAT: ${{secrets.PAT}}
