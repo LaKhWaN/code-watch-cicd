@@ -35,6 +35,6 @@ jobs:
           PAT: ${{secrets.PAT }}
         run: |
           git remote set-url origin https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git
-          git add sum.py
+          git add .
           git commit -m "Auto-push: Tests passed"
           git push origin main
